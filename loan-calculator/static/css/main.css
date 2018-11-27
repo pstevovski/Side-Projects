@@ -129,11 +129,11 @@
           box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.15);
 }
 
-.container .calculate-container .loader {
+.container .calculate-container #loader {
   display: none;
 }
 
-.container .calculate-container .loader:before {
+.container .calculate-container #loader:before {
   content: '';
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -163,7 +163,7 @@
   font-family: "Montserrat Black";
 }
 
-.container .error {
+.container #error {
   display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -175,12 +175,12 @@
           animation: errorMsg 3s ease forwards;
 }
 
-.container .error i {
+.container #error i {
   color: #e1302a;
   font-size: 30px;
 }
 
-.container .error p {
+.container #error p {
   margin-left: 5px;
   font-size: 14px;
 }

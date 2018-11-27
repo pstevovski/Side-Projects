@@ -114,10 +114,10 @@ $placeholderText:"Montserrat SemiBold";
         }
     
         // Loader
-        .loader {
+        #loader {
             display: none;
         }
-        .loader:before {
+        #loader:before {
             content: '';
             box-sizing: border-box;
             position: absolute;
@@ -147,7 +147,7 @@ $placeholderText:"Montserrat SemiBold";
     }
 
     // Error message
-    .error {
+    #error {
         display: none;
         justify-content: center;
         align-items: center;

@@ -89,9 +89,11 @@ body .container button:hover {
 }
 
 body .container #message {
+  display: none;
   position: absolute;
   bottom: 5px;
   font-size: 14px;
+  font-family: "Montserrat Regular";
 }
 
 body .container .messageWin {

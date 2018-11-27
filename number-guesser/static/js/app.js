@@ -47,6 +47,7 @@ function guessNumber(e) {
             btn.textContent = "Play again?";
             inputField.value = "";
             gameWon = true;
+            attempts = 3;
         } else {
             attempts -= 1;
             message.textContent = `Wrong number! You have ${attempts} left!`;
@@ -55,8 +56,10 @@ function guessNumber(e) {
 
         // If attempts = 0, game is ended
         if(attempts === 0) {
-            message.textContent = "You have lost the game.";
-            location.reload();
+            message.textContent = `You have lost the game, the correct number was ${randomNumber}`;
+            setTimeout(() => {
+                location.reload();
+            }, 2500);
         }
     }
     e.preventDefault();

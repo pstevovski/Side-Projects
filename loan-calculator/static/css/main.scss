@@ -145,7 +145,51 @@ $placeholderText:"Montserrat SemiBold";
             font-family: $titlesText;
         }
     }
+
+    // Error message
+    .error {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        animation: errorMsg 3s ease forwards;
+
+        i {
+            color: color(error);
+            font-size: 30px;
+        }
+
+        p {
+            margin-left: 5px;
+            font-size: 14px;
+        }
+    }
 }
+
+/* MATERIAL DESIGN ICONS CSS */
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;  /* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+  
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+  
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
+  
+	/* Support for IE. */
+	font-feature-settings: 'liga';
+  }
 
 @keyframes spinner{
 	from{
@@ -154,4 +198,22 @@ $placeholderText:"Montserrat SemiBold";
 	to{
 		transform:translate(-50%,-50%) rotate(360deg);
 	}
+}
+
+@keyframes errorMsg{
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+      }
+      
+      20%, 80% {
+        transform: translate3d(2px, 0, 0);
+      }
+    
+      30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+      }
+    
+      40%, 60% {
+        transform: translate3d(4px, 0, 0);
+      }
 }

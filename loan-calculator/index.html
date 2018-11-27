@@ -10,13 +10,58 @@
 <body>
     
     <div class="container">
-        <div class="h2">Loan Calculator</div>
+        <h2>Loan Calculator</h2>
 
         <!-- Loan ammount -->
         <div class="items-group">
-            <span class="sign">$</span>
-            <input type="number" name="number" id="ammount" placeholder="Loan ammount">
+            <!-- <span class="title">$</span> -->
+            <input type="number" name="number" id="ammount" placeholder="Loan ammount    $">
         </div>
+
+        <!-- Interest percent -->
+        <div class="items-group">
+            <!-- <span class="title">%</span> -->
+            <input type="number" name="percent" id="interest" placeholder="Interest percent   %">
+        </div>
+
+        <!-- Payment years -->
+        <div class="items-group">
+            <input type="number" name="years" id="paymentYears" placeholder="Payment years">
+        </div>
+
+        <!-- Calculate button -->
+        <div class="calculate-container">
+            <button id="calculate">Calculate</button>
+            <!-- Loader -->
+            <div class="loader"></div>
+        </div>
+
+        <!-- Results -->
+        <div id="results">
+            <h3>Results: </h3>
+            <div class="items-group">
+                <label for="monthly">Monthly Payment:</label>
+                <input type="number" name="monthly" id="monthlyPayment" disabled>
+            </div>
+            <div class="items-group">
+                <label for="total">Total Payment: </label>
+                <input type="number" name="total" id="totalPayment" disabled>
+            </div>
+            <div class="items-group">
+                <label for="totalInterest">Total Interest: </label>
+                <input type="number" name="totalInterest" id="totalInterest" disabled>
+            </div>
+        </div>
+
+        <!-- Error message -->
+        <!-- <div class="error">
+            <div class="warning">
+                <i class="material-icons">warning</i>
+            </div>
+            <div class="warning-text">
+                <p>Please fill out the fields before clicking "Calculate".</p>
+            </div>
+        </div> -->
     </div>
 
 

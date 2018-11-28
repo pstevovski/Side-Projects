@@ -1,0 +1,101 @@
+$colors: (
+    bgColor: #f5f5f5,
+    title: #222,
+    mainText: #333,
+    placeholderText: #22222260
+);
+
+@function color($colorName) {
+    @return map-get($colors, $colorName);
+}
+
+$mainText: "Berkshire Swash";
+$labelText: "Montserrat Regular";
+$placeholderText: "Montserrat Medium";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: color(bgColor);
+}
+
+.container {
+    width: 40%;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+
+    h1 {
+        font-family: $mainText;
+        font-size: 60px;
+        color: color(title);
+    }
+
+    .form-container form{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+
+        input {
+            margin: 5px 0;
+            width: 100%;
+            padding: 5px;
+            font-family: $placeholderText;
+            border: 1px solid rgba(0,0,0,0.2);
+            outline: none;
+            transition: 0.35s ease;
+        }
+
+        input::placeholder {
+            font-family: $placeholderText;
+            color: color(placeholderText);
+        }
+
+        input:focus {
+            border: 1px solid #333333;
+        }
+
+        label {
+            font-family: "Montserrat Light";
+            font-size: 18px;
+        }
+
+        button {
+            margin: 10px 0;
+            width: 100px;
+            padding: 5px;
+            border: 1px solid #33333340;
+            background-color: #fff;
+            font-family: "Montserrat Medium";
+            color: color(placeholderText);
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        button:hover {
+            color: #222;
+            border: 1px solid #333333;
+        }
+    }
+
+    // Table
+    table {
+        margin: 10px 0;
+        width: 100%;
+        text-align: left;
+        font-family: $labelText;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+        
+        thead {
+            text-indent: 5px;
+        }
+
+        tbody {
+            background-color: red;
+        }
+    }
+}

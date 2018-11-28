@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book List</title>
+    <link rel="stylesheet" href="static/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>The Book List</h1>
+
+        <div class="form-container">
+            <form id="theForm">
+                <label for="title">Title: </label>
+                <input type="text" name="title" id="title" placeholder="Book title">
+
+                <label for="author">Author: </label>
+                <input type="text" name="author" id="author" placeholder="Author name">
+
+                <label for="isbn">ISBN #:</label>
+                <input type="number" name="isbn" id="isbn" placeholder="International Standard Book Number">
+
+                <button type="submit">Add</button>
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>ISBN</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <!-- Dynamically insert rows in the body -->
+            <tbody id="table-body"></tbody>
+        </table>
+    </div>
+
+    <!-- Script link -->
+    <script src="static/js/app.js"></script>
+</body>
+</html>

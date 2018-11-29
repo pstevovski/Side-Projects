@@ -89,13 +89,13 @@ body{
             border: 1px solid #33333340;
             background-color: #fff;
             font-family: "Montserrat Medium";
-            color: color(placeholderText);
+            color: color(title);
             cursor: pointer;
+            outline: none;
             transition: 0.2s ease;
         }
 
         button:hover {
-            color: #222;
             border: 1px solid #333333;
         }
     }
@@ -106,12 +106,17 @@ body{
         width: 100%;
         text-align: left;
         font-family: $labelText;
-        border-bottom: 1px solid rgba(0,0,0,0.2);
+        border-collapse: collapse;
+        
+        thead{
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+        }
 
         tbody {
             margin: 5px 0;
-        
+
             td {
+                border-bottom: 1px solid rgba(0,0,0,0.2);
                 padding: 5px;
             }
         }

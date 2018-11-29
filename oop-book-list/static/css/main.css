@@ -22,6 +22,24 @@ body {
   color: #222;
 }
 
+.container #notification {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 5px;
+  font-family: "Montserrat Regular";
+  text-align: left;
+  color: #fff;
+}
+
+.container .error {
+  background-color: #e1302a;
+}
+
+.container .success {
+  background-color: #4cd137;
+}
+
 .container .form-container form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -104,11 +122,17 @@ body {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.container table thead {
-  text-indent: 5px;
+.container table tbody {
+  margin: 5px 0;
 }
 
-.container table tbody {
-  background-color: red;
+.container table tbody td {
+  padding: 5px;
+}
+
+.container table a {
+  text-decoration: none;
+  font-family: "Montserrat Black";
+  color: #e1302a;
 }
 /*# sourceMappingURL=main.css.map */

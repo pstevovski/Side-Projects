@@ -34,6 +34,24 @@ body{
         color: color(title);
     }
 
+    #notification {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+        padding: 5px;
+        font-family: $labelText;
+        text-align: left;
+        color: #fff;
+    }
+
+    .error {
+        background-color: #e1302a;
+    }
+
+    .success {
+        background-color: #4cd137;
+    }
+
     .form-container form{
         display: flex;
         justify-content: center;
@@ -89,13 +107,19 @@ body{
         text-align: left;
         font-family: $labelText;
         border-bottom: 1px solid rgba(0,0,0,0.2);
-        
-        thead {
-            text-indent: 5px;
-        }
 
         tbody {
-            background-color: red;
+            margin: 5px 0;
+        
+            td {
+                padding: 5px;
+            }
+        }
+
+        a {
+            text-decoration: none;
+            font-family: "Montserrat Black";
+            color: #e1302a;
         }
     }
 }

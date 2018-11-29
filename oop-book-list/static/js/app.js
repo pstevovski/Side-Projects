@@ -1,3 +1,4 @@
+// Elements
 const form = document.querySelector("#theForm");
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
@@ -13,10 +14,9 @@ class Book {
         this.isbn = isbn;
     }
 }
+
 // UI
 class UI {
-    constructor(){}
-
     addBook(book) {
         // Create a row
         const row = document.createElement("tr");
@@ -61,6 +61,50 @@ class UI {
     }
 }
 
+// Store books in local storage
+class Store {
+    // Get the books from the local storage
+    static getBooks() {
+        let books = JSON.parse(localStorage.getItem("books")) || [];
+        return books;
+    };
+
+    // Display the books from local storage
+    static displayBooks() {
+        const books = Store.getBooks();
+
+        books.forEach(book => {
+            const ui = new UI();
+
+            ui.addBook(book);
+         });
+    };
+
+    // Add the book to local storage
+    static addBook(book) {
+        const books = Store.getBooks();
+
+        books.push(book);
+
+        localStorage.setItem("books", JSON.stringify(books));
+    }
+
+    // Remove the book from local storage
+    static removeBook(isbn) {
+        const books = Store.getBooks();
+        books.forEach((book, index) => {
+            if(book.isbn === isbn) {
+                books.splice(index, 1)
+            }
+        })
+
+        localStorage.setItem("books", JSON.stringify(books));
+    }
+}
+
+// Display saved books
+document.addEventListener("DOMContentLoaded", Store.displayBooks)
+
 // Submiting the form
 form.addEventListener("submit", (e) => {
     const title = titleInput.value;
@@ -74,10 +118,17 @@ form.addEventListener("submit", (e) => {
     const ui = new UI();
 
     if(!title || !author || !isbn) {
+        // If theres no input value in the fields, display a notification
         ui.notification("Please fill the form fields.", "error")
     } else {
+        // Add a book to the table and display a notification
         ui.notification("Book added to the list.", "success")
         ui.addBook(book);
+
+        // Add book to local storage
+        Store.addBook(book);
+
+        // Clear the input fields after submiting
         ui.clearFields();
     }
 
@@ -88,7 +139,11 @@ document.querySelector("#table-body").addEventListener("click", e => {
     // Instantiate ui
     const ui = new UI();
 
+    // Delete the book from the table
     ui.deleteBook(e.target);
+
+    // Remove the book from local storage
+    Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 
     e.preventDefault();
 })

@@ -1,0 +1,57 @@
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: "Montserrat Regular";
+}
+
+body .container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+body .container h1 {
+  font-family: "Montserrat Black";
+  text-align: center;
+  text-transform: uppercase;
+}
+
+body .container p {
+  font-family: "Montserrat Medium";
+  font-size: 14px;
+  text-align: center;
+  color: #666;
+}
+
+body .container #jokes-list_title {
+  font-family: "Montserrat Medium";
+  font-size: 22px;
+}
+
+body .container #jokes-list {
+  list-style-type: none;
+}
+
+body .container #jokes-list li {
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: "Montserrat Light";
+}
+
+body .container button {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  font-family: "Montserrat Medium";
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+body .container button:hover {
+  border: 1px solid rgba(0, 0, 0, 0.35);
+}
+/*# sourceMappingURL=main.css.map */

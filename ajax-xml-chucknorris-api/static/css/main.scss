@@ -1,0 +1,63 @@
+$mainFont: "Montserrat Regular";
+$titleFont: "Montserrat Black";
+$otherFont: "Montserrat Medium";
+$jokeFont: "Montserrat Light";
+
+body {
+    background-color: #fff;
+    color: #333;
+    font-family: "Montserrat Regular";
+
+    .container {
+        width: 50%;
+        margin: 0 auto;
+
+        h1 {
+            font-family: $titleFont;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-family: $otherFont;
+            font-size: 14px;
+            text-align: center;
+            color: #666;
+        }
+
+        #jokes-list_title {
+            // display: none;
+            font-family: $otherFont;
+            font-size: 22px;
+        }
+
+        // Un-ordered list
+        #jokes-list {
+            list-style-type: none;
+
+            li {
+                margin: 10px 0;
+                padding: 10px;
+                width: 100%;
+                height: auto;
+                background-color: #fff;
+                border: 1px solid rgba(0,0,0,0.1);
+
+                font-family: $jokeFont;
+            }
+        }
+
+        button {
+            background-color: #fff;
+            border: 1px solid rgba(0,0,0,0.1);
+            padding: 10px;
+            font-family: $otherFont;
+            transition: 0.2s ease;
+            cursor: pointer;
+        }
+
+        button:hover {
+            border: 1px solid rgba(0,0,0,0.35);
+        }
+    }
+}

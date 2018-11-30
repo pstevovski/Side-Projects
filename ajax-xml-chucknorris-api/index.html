@@ -11,12 +11,13 @@
     <div class="container">
         <h1>Chuck Norris Jokes</h1>
         <p>Using AJAX XMLHTTPRequest to fetch data from the API.</p>
+        <div class="number_container">
+            <label for="jokesNumber">How many jokes?</label>
+            <input type="number" id="jokesNumber">
+        </div>
     
         <h4 id="jokes-list_title">The Jokes:</h4>
-        <ul id="jokes-list">
-            <li>joke one</li>
-            <li>joke two</li>
-        </ul>
+        <ul id="jokes-list"></ul>
     
         <button id="getJokes">Get Jokes!</button>
 

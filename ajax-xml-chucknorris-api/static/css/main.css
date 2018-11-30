@@ -22,7 +22,32 @@ body .container p {
   color: #666;
 }
 
+body .container .number_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+body .container .number_container input {
+  margin: 5px 0;
+  padding: 3px;
+  width: 100px;
+  outline: none;
+  font-family: "Montserrat Medium";
+}
+
 body .container #jokes-list_title {
+  display: none;
   font-family: "Montserrat Medium";
   font-size: 22px;
 }
@@ -46,9 +71,10 @@ body .container button {
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 10px;
   font-family: "Montserrat Medium";
+  outline: none;
+  cursor: pointer;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
-  cursor: pointer;
 }
 
 body .container button:hover {

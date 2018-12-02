@@ -5,10 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="static/css/main.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1>DataHub</h1>
+        <p>Get the data you want straight from GitHub.</p>
 
+        <form id="form">
+            <input type="text" id="searchUser" placeholder="Username">
+            <button type="submit">Get User</button>
+        </form>
+
+        <!-- Profile info wrapper -->
+        <div id="profile">
+            <!-- Profile image -->
+            <div id="profile-main">
+                <!-- Image -->
+                <div id="profile-image"></div>
+
+                <!-- Name and link -->
+                <a href="https://github.com/users/pecko95">pecko95</a>
+            </div>
+
+            <!-- Profile info -->
+            <div id="profile-info">
+                <!-- Badges -->
+                <div id="badges">
+                    <div class="badge" id="profile-repos">5</div>
+                    <div class="badge" id="profile-followers">2</div>
+                    <div class="badge" id="profile-following">3</div>
+                </div>
+
+                <!-- Basic info about user -->
+                <div id="basic-info">
+                    <ul id="list">
+                        <li>Name: </li>
+                        <li>Blog</li>
+                        <li>Location: </li>
+                        <li>Company</li>
+                        <li>Email</li>
+                        <li>Hireable</li>
+                        <li>Profile Created</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repos -->
+        <div id="repos">
+            <h2>Latest repos</h2>
+
+            <div class="repo-box"></div>
+            <div class="repo-box"></div>
+            <div class="repo-box"></div>
+            <div class="repo-box"></div>
+
+        </div>
+    </div>
+
+
+    <!-- Script link -->
     <script type="module" src="static/js/app.js"></script>
 </body>
 </html>

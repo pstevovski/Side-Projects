@@ -106,7 +106,11 @@ body {
         #profile-image {
             width: 100%;
             height:200px;
-            background-color: purple;
+
+            img {
+                width: 100%;
+                height: 200px;
+            }
 
             @include smallerScreen {
                 height: 250px;
@@ -133,9 +137,6 @@ body {
         }
 
     }
-    @include smallerScreen {
-        flex-direction: column;
-    }
 
     #profile-info {
         width: 75%;
@@ -158,11 +159,15 @@ body {
             }
 
             .badge {
-                width: 100px;
+                width: auto;
                 height: 25px;
+                padding: 5px;
+                margin: 0 5px;
+
                 background-color: #0097e6;
                 color: color(primary);
-                margin: 0 5px;
+                border-radius: 2px;
+
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -182,7 +187,15 @@ body {
                 li {
                     padding: 3px;
                     font-family: $mainFont;
-                    color: color(secondary);
+                    color: #333333;
+
+                    #notAvailable {
+                        color: #333333;
+                    }
+
+                    strong {
+                        color: color(secondary);
+                    }
                 }
 
                 @include smallerScreen {
@@ -195,6 +208,10 @@ body {
         @include smallerScreen {
             width: 100%;
         }
+    }
+
+    @include smallerScreen {
+        flex-direction: column;
     }
 
 }

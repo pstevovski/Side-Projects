@@ -104,7 +104,11 @@ body .container button:hover {
 #profile #profile-main #profile-image {
   width: 100%;
   height: 200px;
-  background-color: purple;
+}
+
+#profile #profile-main #profile-image img {
+  width: 100%;
+  height: 200px;
 }
 
 @media (max-width: 960px) {
@@ -131,15 +135,6 @@ body .container button:hover {
 @media (max-width: 960px) {
   #profile #profile-main {
     width: 100%;
-  }
-}
-
-@media (max-width: 960px) {
-  #profile {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
   }
 }
 
@@ -180,11 +175,13 @@ body .container button:hover {
 }
 
 #profile #profile-info #badges .badge {
-  width: 100px;
+  width: auto;
   height: 25px;
+  padding: 5px;
+  margin: 0 5px;
   background-color: #0097e6;
   color: #fff;
-  margin: 0 5px;
+  border-radius: 2px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -211,6 +208,14 @@ body .container button:hover {
 #profile #profile-info #basic-info ul li {
   padding: 3px;
   font-family: "Montserrat Regular";
+  color: #333333;
+}
+
+#profile #profile-info #basic-info ul li #notAvailable {
+  color: #333333;
+}
+
+#profile #profile-info #basic-info ul li strong {
   color: #00a8ff;
 }
 
@@ -223,6 +228,15 @@ body .container button:hover {
 @media (max-width: 960px) {
   #profile #profile-info {
     width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  #profile {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 

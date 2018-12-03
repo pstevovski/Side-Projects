@@ -12,10 +12,22 @@ form.addEventListener("submit", (e) => {
         alert("Please enter a username")
     } else {
         github.getUser(theUser).then(data => {
-            console.log(data.profile);
+            // Show the profile
             ui.displayData(data.profile);
+
+            // Show the repos
+            console.log(data.repos);
+            ui.displayRepos(data.repos);
         })
     }
 
     e.preventDefault();
+})
+
+searchUser.addEventListener("keyup", ()=>{
+    const theUser = searchUser.value;
+
+    if(!theUser) {
+        ui.clearData();
+    }
 })

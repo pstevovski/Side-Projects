@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #1A237E;
+  color: #00E5FF;
+}
+
+body .container {
+  width: 450px;
+  min-height: 300px;
+  padding: 10px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+body .container h1 {
+  font-family: "Montserrat Black";
+  color: #303F9F;
+  text-align: center;
+}
+
+body .container button:disabled {
+  background-color: rgba(0, 0, 0, 0.65);
+  color: #999;
+}
+
+body .container button:disabled:hover {
+  background-color: rgba(0, 0, 0, 0.65);
+  color: #999;
+}
+
+body .container button {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: "Raleway SemiBold";
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+body .container button:hover {
+  background-color: #00E5FF;
+  color: #1A237E;
+}
+
+@media (max-width: 450px) {
+  body .container {
+    width: 90%;
+  }
+}
+
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 15px 0;
+}
+
+.form-group label {
+  color: #303F9F;
+  font-family: "Raleway SemiBold";
+}
+
+.form-group input {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  margin: 5px 0;
+  background-color: #1A237E;
+  color: #00E5FF;
+  font-family: "Montserrat Regular";
+  outline: none;
+}
+
+.form-group input::-webkit-input-placeholder {
+  color: #00E5FF;
+}
+
+.form-group input:-ms-input-placeholder {
+  color: #00E5FF;
+}
+
+.form-group input::-ms-input-placeholder {
+  color: #00E5FF;
+}
+
+.form-group input::placeholder {
+  color: #00E5FF;
+}
+
+.form-group .invalid {
+  background-color: #ffffff;
+  color: #e1302a;
+  border: 1px solid #e1302a;
+}
+
+.form-group .error {
+  color: #e1302a;
+  font-family: "Raleway Medium";
+}
+/*# sourceMappingURL=main.css.map */

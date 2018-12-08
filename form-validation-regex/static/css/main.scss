@@ -1,0 +1,128 @@
+$colors: (
+    primary: #1A237E,
+    secondary: #ffffff,
+    textColor: #00E5FF,
+    titleFont: #303F9F,
+    error: #e1302a
+);
+
+@function color($colorName){
+    @return map-get($colors, $colorName);
+};
+
+$smallScreen: 450px;
+@mixin smallScreen {
+    @media (max-width: #{$smallScreen}) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$titleFont: "Montserrat Black";
+$textFont: "Montserrat Regular";
+
+$center: translate(-50%, -50%);
+
+body {
+    background-color: color(primary);
+    color: color(textColor);
+
+    // Container
+    .container {
+        width: 450px;
+        min-height: 300px;
+        padding: 10px;
+        margin: 0 auto;
+        background-color: color(secondary);
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: $center;
+
+        h1 {
+            font-family: $titleFont;
+            color: color(titleFont);
+            text-align: center;
+        }
+
+        button:disabled {
+            background-color:rgba(0,0,0,0.65);
+            color: #999;
+        }
+
+        button:disabled:hover {
+            background-color: rgba(0,0,0,0.65);
+            color: #999;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 5px;
+            border: 1px solid rgba(0,0,0,0.2);
+            background-color: color(secondary);
+            cursor: pointer;
+
+            font-size: 18px;
+            font-family: "Raleway SemiBold";
+            transition: 0.2s ease;
+        }
+
+        button:hover {
+            background-color: color(textColor);
+            color: color(primary);
+        }
+
+        @include smallScreen {
+            width: 90%;
+        }
+    }
+}
+
+// Form groups
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    margin: 15px 0;
+
+    label {
+        color: color(titleFont);
+        font-family: "Raleway SemiBold";
+    }
+
+    input {
+        width: 100%;
+        border: 1px solid rgba(0,0,0,0.2);
+        padding: 5px;
+        margin: 5px 0;
+        background-color: color(primary);
+        color: color(textColor);
+
+        font-family: $textFont;
+        outline: none;
+    }
+
+    input::placeholder {
+        color: color(textColor);
+    }
+
+    .invalid {
+        background-color: color(secondary);
+        color: color(error);
+        border: 1px solid color(error);
+    }
+
+    .error {
+        color: color(error);
+        font-family: "Raleway Medium";
+    }
+}

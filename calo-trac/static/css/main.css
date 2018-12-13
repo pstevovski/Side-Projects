@@ -50,6 +50,12 @@ body button i {
   font-size: 24px;
 }
 
+@media (max-width: 500px) {
+  body button {
+    margin: 8px 5px;
+  }
+}
+
 body button:hover {
   background-color: #079992;
   color: #fff;
@@ -140,7 +146,17 @@ body button:hover {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 10px 0;
+}
+
+@media (max-width: 500px) {
+  .container .form-buttons {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .container #notification {
@@ -206,7 +222,7 @@ body button:hover {
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .container #meals-list li {
     width: 100%;
   }
@@ -218,6 +234,7 @@ body button:hover {
 
 .container #meals-list li strong {
   font-family: "Montserrat Medium";
+  font-size: 14px;
   color: #079992;
 }
 

@@ -18,7 +18,7 @@ $placeholdersFont: "Montserrat Light";
 
 // Screen sizes
 $tablets: 900px;
-$mobile: 400px;
+$mobile: 500px;
 
 @mixin mobileScreen {
     @media (max-width: #{$mobile}) {
@@ -69,6 +69,10 @@ body {
 
         i {
             font-size: 24px;
+        }
+
+        @include mobileScreen {
+            margin: 8px 5px;
         }
     }
 
@@ -135,7 +139,12 @@ body {
         display: flex;
         align-items: center;
         justify-content: flex-end;
+        flex-wrap: wrap;
         margin: 10px 0;
+
+        @include mobileScreen {
+            justify-content: center;
+        }
     }
 
     // Notification
@@ -189,6 +198,7 @@ body {
 
             strong {
                 font-family: $subtitleFont;
+                font-size: 14px;
                 color: color(primary);
             }
 

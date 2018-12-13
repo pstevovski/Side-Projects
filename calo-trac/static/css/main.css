@@ -24,6 +24,37 @@ body header p {
   color: #22222260;
 }
 
+body button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 140px;
+  padding: 5px;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: "Montserrat Regular";
+  color: #333;
+  margin: 0 5px;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+body button i {
+  font-size: 24px;
+}
+
+body button:hover {
+  background-color: #079992;
+  color: #fff;
+}
+
 .container {
   max-width: 900px;
   padding: 10px;
@@ -112,37 +143,6 @@ body header p {
   margin: 10px 0;
 }
 
-.container .form-buttons button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 140px;
-  padding: 5px;
-  background: none;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  font-family: "Montserrat Regular";
-  color: #333;
-  margin: 0 5px;
-  cursor: pointer;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
-}
-
-.container .form-buttons button i {
-  font-size: 24px;
-}
-
-.container .form-buttons button:hover {
-  background-color: #079992;
-  color: #fff;
-}
-
 .container #notification {
   text-align: center;
   color: #EA2027;
@@ -150,7 +150,23 @@ body header p {
   margin: 15px 0;
 }
 
-.container h2 {
+.container .list-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .list-title h2 {
   text-align: center;
   text-transform: uppercase;
   font-family: "Montserrat Black";

@@ -51,6 +51,31 @@ body {
             color: color(placeholders);
         }
     }
+
+    
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 140px;
+        padding: 5px;
+        background: none;
+        border: 1px solid rgba(0,0,0,0.2);
+        font-family: $textFont;
+        color: color(textColor);
+        margin: 0 5px;
+        cursor: pointer;
+        transition: 0.2s ease;
+
+        i {
+            font-size: 24px;
+        }
+    }
+
+    button:hover {
+        background-color: color(primary);
+        color: #fff;
+    }
 }
 
 // Container
@@ -111,30 +136,6 @@ body {
         align-items: center;
         justify-content: flex-end;
         margin: 10px 0;
-
-        button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 140px;
-            padding: 5px;
-            background: none;
-            border: 1px solid rgba(0,0,0,0.2);
-            font-family: $textFont;
-            color: color(textColor);
-            margin: 0 5px;
-            cursor: pointer;
-            transition: 0.2s ease;
-
-            i {
-                font-size: 24px;
-            }
-        }
-
-        button:hover {
-            background-color: color(primary);
-            color: #fff;
-        }
     }
 
     // Notification
@@ -146,11 +147,18 @@ body {
     }
 
     // Total calories title
-    h2 {
-        text-align: center;
-        text-transform: uppercase;
-        font-family: $titlesFont;
-        color: color(primary);
+    .list-title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h2 {
+            text-align: center;
+            text-transform: uppercase;
+            font-family: $titlesFont;
+            color: color(primary);
+        }
     }
 
     // List items (meals)

@@ -36,6 +36,7 @@
             <div class="form-buttons">
                 <button id="addMeal" type="submit"><i class="material-icons">add</i> Add meal</button>
                 <button id="updateMeal" type="submit"><i class="material-icons">edit</i> Update meal</button>
+                <button id="deleteMeal" type="submit"><i class="material-icons">delete</i>Delete meal</button>
                 <button id="back"><i class="material-icons">arrow_back</i> Back</button>
             </div>
 
@@ -43,26 +44,14 @@
             <h5 id="notification"></h5>
         </div>
 
-        <!-- Meals list -->
-        <h2>Total calories: <span id="totalCalories">0</span></h2>
-        <!-- <button id="clearAll">Clear All</button> -->
+        <!-- Meals list title -->
+        <div class="list-title">
+            <h2>Total calories: <span id="totalCalories">0</span></h2>
+            <button id="clearAll"><i class="material-icons">delete_forever</i> Clear All</button>
+        </div>
 
-        <ul id="meals-list">
-            <li class="meal-item">
-                <p>Steak <em><strong>Calories: 250</strong></em></p>
-                <div class="controls">
-                    <i class="material-icons deleteMeal">delete</i>
-                    <i class="material-icons editMeal">edit</i>
-                </div>
-            </li>
-            <li class="meal-item">
-                <p>Steak <em><strong>Calories: 450</strong></em></p>
-                <div class="controls">
-                    <i class="material-icons deleteMeal">delete</i>
-                    <i class="material-icons editMeal">edit</i>
-                </div>
-            </li>
-        </ul>
+        <!-- Meals list -->
+        <ul id="meals-list"></ul>
     </div>
 
     <script src="static/js/app.js"></script>

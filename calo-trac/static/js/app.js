@@ -1,5 +1,64 @@
 // Storage controler
+const StorageCtrl = (function() {
+    // Public methods
+    return {
+        storeItem: function(item) {
+            let items;
+            
+            if(!localStorage.getItem("meals")) {
+                items = [];
+                items.push(item);
+                localStorage.setItem("meals", JSON.stringify(items))
+            } else {
+                items = JSON.parse(localStorage.getItem("meals"));
 
+                // Push the new item
+                items.push(item);
+
+                // Reset local storage
+                localStorage.setItem("meals", JSON.stringify(items));
+            }
+        },
+        // Get the items from the local storage
+        getFromStorage: function() {
+            let items;
+            if(!localStorage.getItem("meals")) {
+                items = [];
+            } else {
+                items = JSON.parse(localStorage.getItem("meals"))
+            }
+
+            return items;
+        },
+        // Update items in local storage
+        updateItemStorage: function(updatedItem) {
+            let items = JSON.parse(localStorage.getItem('meals'));
+
+            items.forEach( (item, index) => {
+                if(updatedItem.id === item.id) {
+                    items.splice(index, 1, updatedItem); // Delete the item from the array, and then replace it with the new item
+                }
+            });
+            localStorage.setItem("meals", JSON.stringify(items));
+        },
+
+        // Delete item from storage
+        deleteItemFromStorage: function(id) {
+            let items = JSON.parse(localStorage.getItem("meals"));
+
+            items.forEach((item, index) => {
+                if(id === item.id) {
+                    items.splice(index, 1);
+                }
+            })
+            localStorage.setItem("meals", JSON.stringify(items));
+        },
+        // Clear local storage from the meals
+        clearStorage: function() {
+            localStorage.removeItem("meals");
+        }
+    }
+})();
 // Item controler
 const ItemCtrl = (function() {
     // Item constructor
@@ -11,7 +70,7 @@ const ItemCtrl = (function() {
     
     // Data
     const data = {
-        items: [],
+        items: StorageCtrl.getFromStorage(),
         currentItem: null,
         totalCalories: 0
     }
@@ -140,13 +199,12 @@ const UICtrl = (function() {
         populateItemsList: function(items) {
             let output = '';
 
-            // Destructuring object
-            
             items.forEach(item => {
+                // Destructuring object
                 const { id, name, calories } = item;
                 output += `
                 <li id="item-${id} class="meal-item">
-                    <p>${name}<em><strong> ${calories} Calories</strong></em></p>
+                    <p>${name}: <em><strong> ${calories} Calories</strong></em></p>
                     <div class="controls">
                         <i class="material-icons editMeal">edit</i>
                     </div>
@@ -175,7 +233,7 @@ const UICtrl = (function() {
 
             // Add HTML to the li
             li.innerHTML = `
-            <p>${item.name}<em><strong> ${item.calories} Calories</strong></em></p>
+            <p>${item.name}: <em><strong> ${item.calories} Calories</strong></em></p>
             <div class="controls">
                 <i class="material-icons editMeal">edit</i>
             </div>`;
@@ -196,7 +254,7 @@ const UICtrl = (function() {
 
                 if(itemId === `item-${item.id}`) {
                     document.querySelector(`#${itemId}`).innerHTML = `
-                    <p>${item.name}<em><strong> ${item.calories} Calories</strong></em></p>
+                    <p>${item.name}: <em><strong> ${item.calories} Calories</strong></em></p>
                     <div class="controls">
                         <i class="material-icons editMeal">edit</i>
                     </div>`;
@@ -206,9 +264,11 @@ const UICtrl = (function() {
 
         // Delete list item
         deleteListItem: function(id) {
+            // debugger;
             const itemId = `#item-${id}`;
 
             const item = document.querySelector(itemId);
+            console.log(item);
             item.remove();
         },
 
@@ -268,7 +328,7 @@ const UICtrl = (function() {
 
 
 // App controler
-const App = (function(ItemCtrl, UICtrl) {
+const App = (function(ItemCtrl, StorageCtrl, UICtrl) {
     // Load event listeners
     const loadEventListeners = function () {
         // Get ui selectors
@@ -314,6 +374,9 @@ const App = (function(ItemCtrl, UICtrl) {
 
             // Display clear all button
             document.querySelector(UISelectors.clearBtn).style.display = "flex";
+
+            // Add item to local storage
+            StorageCtrl.storeItem(newItem);
 
             // Clear fiels
             UICtrl.clearFields();
@@ -363,17 +426,22 @@ const App = (function(ItemCtrl, UICtrl) {
 
         // Update item
         const updatedItem = ItemCtrl.updateItem(input.name, input.calories);
-
+        
         // Update the UI
         UICtrl.updateListItem(updatedItem);
 
+        
         // Get total calories
         const totalCalories = ItemCtrl.getTotalCalories();
         UICtrl.showTotalCalories(totalCalories);
-
+        
+        
         // Clear fiels
         UICtrl.clearEditState();
-
+        
+        // Update local storage
+        StorageCtrl.updateItemStorage(updatedItem);
+        
         e.preventDefault();
     }
 
@@ -393,6 +461,9 @@ const App = (function(ItemCtrl, UICtrl) {
         UICtrl.showTotalCalories(totalCalories);
 
         UICtrl.clearEditState();
+
+        // Delete from local storage
+        StorageCtrl.deleteItemFromStorage(currentItem.id);
 
         // If there are no items, hide the clear all button
         const itemsArr = ItemCtrl.getItems();
@@ -417,33 +488,50 @@ const App = (function(ItemCtrl, UICtrl) {
         // Update the UI
         UICtrl.removeItems();
 
+        // Hide the clear all button
+        document.querySelector("#clearAll").style.display = "none";
+
+        // Clear the local storage from meals
+        StorageCtrl.clearStorage();
+
         e.preventDefault();
     }
     
     return {
+        // Initialize the application
         init: function() {
             // Clear state
             UICtrl.clearEditState();
 
             // Fetch items from data structure
             const items = ItemCtrl.getItems();
+            const itemsFromStorage = JSON.parse(localStorage.getItem("meals"));
 
-            if(items.length > 0) {
-                UICtrl.populateItemsList(items);
-                document.querySelector("#clearAll").style.display = "flex";
+            if(!itemsFromStorage) {
+                if(items.length > 0) {
+                    UICtrl.populateItemsList(items);
+                    document.querySelector("#clearAll").style.display = "flex";
+                } else {
+                    document.querySelector("#clearAll").style.display = "none";
+                }
             } else {
-                document.querySelector("#clearAll").style.display = "none";
+                console.log(itemsFromStorage);
+                if(itemsFromStorage.length > 0) {
+                    UICtrl.populateItemsList(itemsFromStorage);
+                    document.querySelector("#clearAll").style.display = "flex";
+                } else {
+                    document.querySelector("#clearAll").style.display = "none";
+                }
             }
-
             // Get total calories
             const totalCalories = ItemCtrl.getTotalCalories();
             UICtrl.showTotalCalories(totalCalories);
 
             // Load event listeners
             loadEventListeners();
-        }
+        },
     }
 
-})(ItemCtrl, UICtrl);
+})(ItemCtrl, StorageCtrl, UICtrl);
 
 App.init();

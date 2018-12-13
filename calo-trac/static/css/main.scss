@@ -113,7 +113,10 @@ body {
         margin: 10px 0;
 
         button {
-            width: 110px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 140px;
             padding: 5px;
             background: none;
             border: 1px solid rgba(0,0,0,0.2);
@@ -122,12 +125,24 @@ body {
             margin: 0 5px;
             cursor: pointer;
             transition: 0.2s ease;
+
+            i {
+                font-size: 24px;
+            }
         }
 
         button:hover {
             background-color: color(primary);
             color: #fff;
         }
+    }
+
+    // Notification
+    #notification {
+        text-align: center;
+        color: #EA2027;
+        font-family: $textFont;
+        margin: 15px 0;
     }
 
     // Total calories title

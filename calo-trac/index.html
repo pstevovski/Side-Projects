@@ -28,20 +28,25 @@
                     <!-- Calories input -->
                     <div class="form-item">
                         <label>Calories:</label>
-                        <input type="text" id="calories" placeholder="Meal calories">
+                        <input type="text" id="calories" placeholder="Meal calories (numbers)">
                     </div>
                 </div>
-
-                <div class="form-buttons">
-                    <button id="addMeal" type="submit">Add meal</button>
-                    <!-- <button id="updateMeal" type="submit">Update meal</button>
-                    <button id="back">Back</button> -->
-                </div>
             </form>
+
+            <div class="form-buttons">
+                <button id="addMeal" type="submit"><i class="material-icons">add</i> Add meal</button>
+                <button id="updateMeal" type="submit"><i class="material-icons">edit</i> Update meal</button>
+                <button id="back"><i class="material-icons">arrow_back</i> Back</button>
+            </div>
+
+            <!-- Notification -->
+            <h5 id="notification"></h5>
         </div>
 
         <!-- Meals list -->
-        <h2>Total calories: 0</h2>
+        <h2>Total calories: <span id="totalCalories">0</span></h2>
+        <!-- <button id="clearAll">Clear All</button> -->
+
         <ul id="meals-list">
             <li class="meal-item">
                 <p>Steak <em><strong>Calories: 250</strong></em></p>

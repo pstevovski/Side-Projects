@@ -113,7 +113,16 @@ body header p {
 }
 
 .container .form-buttons button {
-  width: 110px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 140px;
   padding: 5px;
   background: none;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -125,9 +134,20 @@ body header p {
   transition: 0.2s ease;
 }
 
+.container .form-buttons button i {
+  font-size: 24px;
+}
+
 .container .form-buttons button:hover {
   background-color: #079992;
   color: #fff;
+}
+
+.container #notification {
+  text-align: center;
+  color: #EA2027;
+  font-family: "Montserrat Regular";
+  margin: 15px 0;
 }
 
 .container h2 {

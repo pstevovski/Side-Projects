@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CaloTrac</title>
+    <link rel="stylesheet" href="static/css/main.css">
+</head>
+<body>
+    <header>
+        <h1>CaloTrac</h1>
+        <p><em>track your daily calories intake</em></p>
+    </header>
+
+    <!-- Controls and items container -->
+    <div class="container">
+        <div class="main">
+            <h3>Add meal & calories</h3>
+
+            <form id="form">
+                <div class="form-inputs">
+                    <!-- Meals input -->
+                    <div class="form-item">
+                        <label>Meal:</label>
+                        <input type="text" id="meal" placeholder="Meal name">
+                    </div>
+                    <!-- Calories input -->
+                    <div class="form-item">
+                        <label>Calories:</label>
+                        <input type="text" id="calories" placeholder="Meal calories">
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button id="addMeal" type="submit">Add meal</button>
+                    <!-- <button id="updateMeal" type="submit">Update meal</button>
+                    <button id="back">Back</button> -->
+                </div>
+            </form>
+        </div>
+
+        <!-- Meals list -->
+        <h2>Total calories: 0</h2>
+        <ul id="meals-list">
+            <li class="meal-item">
+                <p>Steak <em><strong>Calories: 250</strong></em></p>
+                <div class="controls">
+                    <i class="material-icons deleteMeal">delete</i>
+                    <i class="material-icons editMeal">edit</i>
+                </div>
+            </li>
+            <li class="meal-item">
+                <p>Steak <em><strong>Calories: 450</strong></em></p>
+                <div class="controls">
+                    <i class="material-icons deleteMeal">delete</i>
+                    <i class="material-icons editMeal">edit</i>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>

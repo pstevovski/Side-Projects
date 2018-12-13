@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button, input, a {
+  outline: none;
+}
+
+body header {
+  text-align: center;
+}
+
+body header h1 {
+  font-family: "Montserrat Black";
+  font-size: 35px;
+  color: #079992;
+}
+
+body header p {
+  font-family: "Montserrat Regular";
+  color: #22222260;
+}
+
+.container {
+  max-width: 900px;
+  padding: 10px;
+  margin: 25px auto;
+  -webkit-box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container h3 {
+  font-size: 26px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Montserrat Black";
+  color: #079992;
+}
+
+.container .form-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .form-inputs .form-item {
+  margin: 0 5px;
+}
+
+.container .form-inputs .form-item label {
+  font-family: "Montserrat Medium";
+}
+
+.container .form-inputs .form-item input {
+  margin: 10px 0;
+  padding: 5px;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #22222260;
+  opacity: 0.5;
+  font-family: "Montserrat Regular";
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.container .form-inputs .form-item input::-webkit-input-placeholder {
+  font-family: "Montserrat Light";
+  color: #333;
+}
+
+.container .form-inputs .form-item input:-ms-input-placeholder {
+  font-family: "Montserrat Light";
+  color: #333;
+}
+
+.container .form-inputs .form-item input::-ms-input-placeholder {
+  font-family: "Montserrat Light";
+  color: #333;
+}
+
+.container .form-inputs .form-item input::placeholder {
+  font-family: "Montserrat Light";
+  color: #333;
+}
+
+.container .form-inputs .form-item input:focus {
+  border-bottom: 2px solid #1e3799;
+  opacity: 1;
+}
+
+.container .form-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 10px 0;
+}
+
+.container .form-buttons button {
+  width: 110px;
+  padding: 5px;
+  background: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: "Montserrat Regular";
+  color: #333;
+  margin: 0 5px;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+}
+
+.container .form-buttons button:hover {
+  background-color: #079992;
+  color: #fff;
+}
+
+.container h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Montserrat Black";
+  color: #079992;
+}
+
+.container #meals-list {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container #meals-list li {
+  width: 80%;
+  padding: 10px;
+  margin: 3px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 400px) {
+  .container #meals-list li {
+    width: 100%;
+  }
+}
+
+.container #meals-list li p {
+  font-family: "Montserrat Regular";
+}
+
+.container #meals-list li strong {
+  font-family: "Montserrat Medium";
+  color: #079992;
+}
+
+.container #meals-list li i {
+  color: #22222260;
+  font-size: 24px;
+  cursor: pointer;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+}
+
+.container #meals-list li .deleteMeal:hover {
+  color: #EA2027;
+}
+
+.container #meals-list li .editMeal:hover {
+  color: #079992;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga';
+}
+/*# sourceMappingURL=main.css.map */

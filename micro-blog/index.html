@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://bootswatch.com/4/simplex/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary mb-3">
+        <div class="container">
+            <h1 class="navbar-brand">MicroBlog</h1>
+        </div>
+    </nav>
+
+    <div class="container postContainer">
+        <div class="card card-body card-form">
+            <h1>Say something</h1>
+            <p class="lead">Whats on your mind</p>
+            <div class="form-group">
+                <input type="text" id="title" class="form-control" placeholder="Blog post title" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <textarea id="body" class="form-control" placeholder="Blog post body"></textarea>
+            </div>
+        </div>
+        <input type="hidden" id="id" value="">
+        <button class="post-submit btn btn-primary btn-block">Post it</button>
+        <!-- <button class="post-submit btn btn-secondary btn-block">Cacnel edit</button> -->
+        <br>
+        <div id="posts"></div>
+    </div>
+
+    <footer class="mt-5 p-3 text-center bg-light">MicroBlog &copy;</footer>
+    <script src="build/app.compiled.js"></script>
+</body>
+</html>

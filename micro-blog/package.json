@@ -1,0 +1,38 @@
+{
+  "name": "babel-webpack-starter",
+  "version": "1.0.0",
+  "description": "\"A babel-webpack pre-configured starter pack, which will be updated regulary.\"",
+  "main": "./src/js/app.js",
+  "scripts": {
+    "start": "webpack-dev-server --output-public-path=/build/ --mode development --progress --open --hot",
+    "build": "webpack --mode production --progress",
+    "json:server": "json-server --watch data/db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pecko95/Babel-Webpack-Starter.git"
+  },
+  "keywords": [
+    "babel",
+    "webpack",
+    "configured",
+    "starter",
+    "pack"
+  ],
+  "author": "Petar Stevovski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pecko95/Babel-Webpack-Starter/issues"
+  },
+  "homepage": "https://github.com/pecko95/Babel-Webpack-Starter#readme",
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.2.0",
+    "babel-loader": "^8.0.4",
+    "json-server": "^0.14.0",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  }
+}

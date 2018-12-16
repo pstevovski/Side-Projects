@@ -1,0 +1,24 @@
+body {
+  font-family: "Montserrat Regular";
+}
+
+body h1, body h4 {
+  font-family: "Raleway Black";
+}
+
+body input::-webkit-input-placeholder, body textarea::-webkit-input-placeholder {
+  font-family: "Raleway Light";
+}
+
+body input:-ms-input-placeholder, body textarea:-ms-input-placeholder {
+  font-family: "Raleway Light";
+}
+
+body input::-ms-input-placeholder, body textarea::-ms-input-placeholder {
+  font-family: "Raleway Light";
+}
+
+body input::placeholder, body textarea::placeholder {
+  font-family: "Raleway Light";
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,15 @@
+$mainFont: "Montserrat Regular";
+$titleFont: "Raleway Black";
+$placeholderFont: "Raleway Light";
+
+body {
+    font-family: $mainFont;
+
+    h1, h4 {
+        font-family: $titleFont;
+    }
+
+    input::placeholder, textarea::placeholder {
+        font-family: $placeholderFont;
+    }
+}

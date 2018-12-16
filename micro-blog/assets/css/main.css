@@ -1,9 +1,9 @@
 body {
-  font-family: "Montserrat Regular";
+  font-family: "Raleway Regular";
 }
 
 body h1, body h4 {
-  font-family: "Raleway Black";
+  font-family: "Paytone One";
 }
 
 body input::-webkit-input-placeholder, body textarea::-webkit-input-placeholder {
@@ -20,5 +20,44 @@ body input::-ms-input-placeholder, body textarea::-ms-input-placeholder {
 
 body input::placeholder, body textarea::placeholder {
   font-family: "Raleway Light";
+}
+
+.container #notification {
+  font-family: "Paytone One";
+  font-size: 14px;
+}
+
+.container .success {
+  color: limegreen;
+}
+
+.container .error {
+  color: #e1302a;
+}
+
+.container #posts .post-container {
+  position: relative;
+  margin: 10px 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container #posts .post-container h4 {
+  margin: 10px;
+  font-size: 25px;
+  font-family: "Paytone One";
+}
+
+.container #posts .post-container #post-body {
+  margin-left: 10px;
+}
+
+.container #posts .post-container #creationDate {
+  position: absolute;
+  right: 5px;
+  bottom: -5px;
+  color: #333333;
+  font-family: "Raleway Regular";
 }
 /*# sourceMappingURL=main.css.map */

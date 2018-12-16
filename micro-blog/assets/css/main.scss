@@ -1,5 +1,5 @@
-$mainFont: "Montserrat Regular";
-$titleFont: "Raleway Black";
+$mainFont: "Raleway Regular";
+$titleFont: "Paytone One";
 $placeholderFont: "Raleway Light";
 
 body {
@@ -11,5 +11,51 @@ body {
 
     input::placeholder, textarea::placeholder {
         font-family: $placeholderFont;
+    }
+}
+
+// Container
+.container {
+    #notification {
+        font-family: $titleFont;
+        font-size: 14px;
+    }
+
+    // Successfull notification
+    .success {
+        color: limegreen;
+    }
+
+    // Error
+    .error {
+        color: #e1302a;
+    }
+    
+    // Posts
+    #posts {
+        .post-container{
+            position: relative;
+            margin: 10px 0;
+            border: 1px solid rgba(0,0,0,0.1);
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+
+            h4 {
+                margin: 10px;
+                font-size: 25px;
+                font-family: $titleFont;
+            }
+
+            #post-body {
+                margin-left: 10px;
+            }
+
+            #creationDate {
+                position: absolute;
+                right: 5px;
+                bottom: -5px;
+                color: #333333;
+                font-family: $mainFont;
+            }
+        }
     }
 }

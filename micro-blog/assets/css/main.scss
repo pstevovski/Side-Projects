@@ -30,6 +30,11 @@ body {
     .error {
         color: #e1302a;
     }
+
+    // Cancel button
+    #cancelBtn {
+        display: none;
+    }
     
     // Posts
     #posts {
@@ -37,7 +42,7 @@ body {
             position: relative;
             margin: 10px 0;
             border: 1px solid rgba(0,0,0,0.1);
-            box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
 
             h4 {
                 margin: 10px;
@@ -56,6 +61,66 @@ body {
                 color: #333333;
                 font-family: $mainFont;
             }
+
+            // Controls
+            .controls {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-end;
+                padding: 10px;
+
+                button {
+                    margin: 0 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #22222280;
+                    font-family: $mainFont;
+                    background: #fff;
+                    border: 1px solid rgba(0,0,0,0.1);
+                    width: 80px;
+                    cursor: pointer;
+                    outline: none;
+                    transition: 0.2s ease;
+
+                    i {
+                        font-size: 24px;
+                        margin: 0 3px;
+                    }
+                }
+
+                #updatePost:hover {
+                    color: #273c75;
+                }
+                #deletePost:hover {
+                    color: #e1302a;
+                }
+            }
         }
     }
 }
+
+// Material Icons support
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    -webkit-font-feature-settings: 'liga';
+            font-feature-settings: 'liga';
+  }

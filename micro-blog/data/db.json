@@ -1,14 +1,28 @@
 {
-    "posts": [
-        {
-            "id": 1,
-            "title": "Post one",
-            "body": "Body of post one"
-        },
-        {
-            "id": 2,
-            "title": "Post two",
-            "body": "Body of post two"
-        }
-    ]
+  "posts": [
+    {
+      "title": "123",
+      "body": "Ova e test broj 2",
+      "postDate": "2018-12-16, 15:42:27",
+      "id": 1
+    },
+    {
+      "title": "Pecko 2",
+      "body": "Ova e test 2",
+      "postDate": "2018-12-16, 15:29:08",
+      "id": 2
+    },
+    {
+      "title": "I changed my mind",
+      "body": "Fuck off \"buddies\"",
+      "postDate": "2018-12-16, 15:33:15",
+      "id": 3
+    },
+    {
+      "title": "Test 3",
+      "body": "Test",
+      "postDate": "2018-12-16, 15:38:26",
+      "id": 4
+    }
+  ]
 }

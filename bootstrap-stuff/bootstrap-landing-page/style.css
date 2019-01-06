@@ -1,0 +1,61 @@
+html {
+    height: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    color: #fff;
+    background-image: url('./nebula.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar .navbar-brand {
+    font-family: "Montserrat Black";
+    font-size: 30px;
+    color: #f5f5f5;
+    letter-spacing: 1px;
+}
+
+.navbar .navbar-toggler-icon {
+    color: #f5f5f5;
+    font-size: 24px;
+    outline: none;
+}
+
+.navbar ul li a:hover {
+    transition: 0.2s ease;
+    color: #fff;
+}
+
+.navbar .dropdown-menu {
+    background-color: #f5f5f5;
+}
+
+.navbar .dropdown-menu a {
+    color: #222;
+}
+.navbar .dropdown-menu a:hover {
+    background-color: transparent;
+    color: #222;
+}
+
+#content {
+    text-align: center;
+    padding-top: 30%;
+}
+
+#content h1 {
+    font-family: "Montserrat Black";
+    color: #f5f5f5;
+}
+#content p {
+    font-family: "Montserrat Regular";
+    font-size: 14px;
+    color: #f5f5f5;
+}
